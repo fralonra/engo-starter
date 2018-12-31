@@ -4,7 +4,7 @@ import (
 	"engo.io/ecs"
 	"engo.io/engo"
 	"engo.io/engo/common"
-	"fralonra/engo-demo/utils"
+	"fralonra/engo-starter/utils"
 )
 
 type GameScene struct {
