@@ -94,14 +94,8 @@ func (s *ButtonSystem) Remove(basic ecs.BasicEntity) {
 func (s *ButtonSystem) Update(dt float32) {
 	for _, e := range s.entities {
 		if e.Clicked {
-			pos := engo.Point{
-				X: e.MouseX,
-				Y: e.MouseY,
-			}
-			if e.Contains(pos) {
-				if f, ok := e.eventHandlers[eventClick]; ok {
-					f()
-				}
+			if f, ok := e.eventHandlers[eventClick]; ok {
+				f()
 			}
 		}
 	}
