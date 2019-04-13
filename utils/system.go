@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"engo.io/ecs"
+	"github.com/EngoEngine/ecs"
 )
 
 type System struct{}

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"engo.io/engo"
 	"fralonra/engo-starter/scenes"
+	"github.com/EngoEngine/engo"
 )
 
 const (

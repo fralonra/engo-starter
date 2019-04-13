@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"engo.io/engo"
+	"github.com/EngoEngine/engo"
 	"log"
 )
 

@@ -1,9 +1,9 @@
 package utils
 
 import (
-	"engo.io/ecs"
-	"engo.io/engo"
-	"engo.io/engo/common"
+	"github.com/EngoEngine/ecs"
+	"github.com/EngoEngine/engo"
+	"github.com/EngoEngine/engo/common"
 )
 
 type Label struct {
@@ -22,14 +22,14 @@ func (l *Label) Init() {
 
 	width, height, _ := l.Font.TextDimensions(l.Text)
 
-	l.SpaceComponent = common.SpaceComponent{
-		Width:  float32(width),
-		Height: float32(height),
-	}
-	l.SpaceComponent.Position = l.Position
 	l.RenderComponent.Drawable = common.Text{
 		Font: l.Font,
 		Text: l.Text,
+	}
+	l.SpaceComponent = common.SpaceComponent{
+		Width:    float32(width),
+		Height:   float32(height),
+		Position: l.Position,
 	}
 
 	l.SetShader(common.TextHUDShader)
