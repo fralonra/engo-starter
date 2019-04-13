@@ -2,10 +2,10 @@ package scenes
 
 import (
 	"bytes"
-	"fralonra/engo-starter/utils"
 	"github.com/EngoEngine/ecs"
 	"github.com/EngoEngine/engo"
 	"github.com/EngoEngine/engo/common"
+	"github.com/fralonra/engo-starter/utils"
 	"golang.org/x/image/font/gofont/gosmallcaps"
 	"image/color"
 )
