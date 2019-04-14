@@ -33,6 +33,7 @@ func (*MainMenuScene) Setup(u engo.Updater) {
 	for index, text := range entriesText {
 		entry := utils.Button{
 			World: w,
+			IsHud: true,
 			Label: utils.Label{
 				Font:  mdFont,
 				Text:  text,
