@@ -4,7 +4,7 @@ import (
 	"github.com/EngoEngine/ecs"
 	"github.com/EngoEngine/engo"
 	"github.com/EngoEngine/engo/common"
-	"github.com/fralonra/engo-starter/utils"
+	"github.com/fralonra/engo-utils"
 )
 
 type GameScene struct {
@@ -19,7 +19,7 @@ func (*GameScene) Setup(u engo.Updater) {
 	w.AddSystem(&common.RenderSystem{})
 	w.AddSystem(&common.MouseSystem{})
 	w.AddSystem(&GameSystem{})
-	w.AddSystem(&utils.ButtonSystem{})
+	w.AddSystem(&utils.ClickableSystem{})
 
 	label1 := utils.Label{
 		World: w,
@@ -34,8 +34,10 @@ func (*GameScene) Setup(u engo.Updater) {
 
 	button := utils.Button{
 		World: w,
-		Font:  smFont,
-		Text:  "Go back",
+		Label: utils.Label{
+			Font:  smFont,
+			Text:  "Go back",
+		},
 		Position: engo.Point{
 			X: 100,
 			Y: 500,

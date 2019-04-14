@@ -5,7 +5,7 @@ import (
 	"github.com/EngoEngine/ecs"
 	"github.com/EngoEngine/engo"
 	"github.com/EngoEngine/engo/common"
-	"github.com/fralonra/engo-starter/utils"
+	"github.com/fralonra/engo-utils"
 	"golang.org/x/image/font/gofont/gosmallcaps"
 	"image/color"
 )

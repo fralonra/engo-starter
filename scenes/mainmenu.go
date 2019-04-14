@@ -4,7 +4,7 @@ import (
 	"github.com/EngoEngine/ecs"
 	"github.com/EngoEngine/engo"
 	"github.com/EngoEngine/engo/common"
-	"github.com/fralonra/engo-starter/utils"
+	"github.com/fralonra/engo-utils"
 )
 
 type MainMenuScene struct {
@@ -19,7 +19,7 @@ func (*MainMenuScene) Setup(u engo.Updater) {
 	w.AddSystem(&common.RenderSystem{})
 	w.AddSystem(&common.MouseSystem{})
 	w.AddSystem(&MainMenuSystem{})
-	w.AddSystem(&utils.ButtonSystem{})
+	w.AddSystem(&utils.ClickableSystem{})
 
 	entriesText := []string{"New", "Quit"}
 	entriesClicker := []func(){
@@ -33,8 +33,10 @@ func (*MainMenuScene) Setup(u engo.Updater) {
 	for index, text := range entriesText {
 		entry := utils.Button{
 			World: w,
-			Font:  mdFont,
-			Text:  text,
+			Label: utils.Label{
+				Font:  mdFont,
+				Text:  text,
+			},
 			Position: engo.Point{
 				X: 300,
 				Y: 240 + float32(index*100),
