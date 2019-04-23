@@ -26,6 +26,7 @@ type SplashScene struct {
 }
 
 func (*SplashScene) Preload() {
+	engo.Files.Load("ui/button.png")
 	engo.Files.LoadReaderData("go.ttf", bytes.NewReader(gosmallcaps.TTF))
 }
 
@@ -68,7 +69,6 @@ func (*SplashScene) Setup(u engo.Updater) {
 	label1 := utils.Label{
 		World: w,
 		Font:  lgFont,
-		IsHud: true,
 		Text:  "Splash",
 		Position: engo.Point{
 			X: 300,

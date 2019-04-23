@@ -33,11 +33,9 @@ func (*MainMenuScene) Setup(u engo.Updater) {
 	for index, text := range entriesText {
 		entry := utils.Button{
 			World: w,
-			IsHud: true,
-			Label: utils.Label{
-				Font:  mdFont,
-				Text:  text,
-			},
+			Font:  mdFont,
+			Text:  text,
+			Texture: "ui/button.png",
 			Position: engo.Point{
 				X: 300,
 				Y: 240 + float32(index*100),

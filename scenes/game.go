@@ -24,7 +24,6 @@ func (*GameScene) Setup(u engo.Updater) {
 	label1 := utils.Label{
 		World: w,
 		Font:  lgFont,
-		IsHud: true,
 		Text:  "Game",
 		Position: engo.Point{
 			X: 300,
@@ -35,11 +34,8 @@ func (*GameScene) Setup(u engo.Updater) {
 
 	button := utils.Button{
 		World: w,
-		IsHud: true,
-		Label: utils.Label{
-			Font:  smFont,
-			Text:  "Go back",
-		},
+		Font:  smFont,
+		Text:  "Go back",
 		Position: engo.Point{
 			X: 100,
 			Y: 500,
