@@ -21,29 +21,32 @@ func (*MainMenuScene) Setup(u engo.Updater) {
 	w.AddSystem(&MainMenuSystem{})
 	w.AddSystem(&utils.ClickableSystem{})
 
-	entriesText := []string{"New", "Quit"}
-	entriesClicker := []func(){
-		func() {
-			engo.SetSceneByName(sceneGame, false)
-		}, func() {
-			engo.Exit()
+	entities := []utils.MenuEntity{
+		utils.MenuEntity{
+			Text: "New",
+			OnClick: func() {
+				engo.SetSceneByName(sceneGame, false)
+			},
+		},
+		utils.MenuEntity{
+			Text: "Quit",
+			OnClick: func() {
+				engo.Exit()
+			},
 		},
 	}
-
-	for index, text := range entriesText {
-		entry := utils.Button{
-			World: w,
-			Font:  mdFont,
-			Text:  text,
-			Texture: "ui/button.png",
-			Position: engo.Point{
-				X: 300,
-				Y: 240 + float32(index*100),
-			},
-		}
-		entry.Init()
-		entry.OnClick(entriesClicker[index])
+	menu := utils.Menu{
+		World:   w,
+		Font:    mdFont,
+		Texture: "ui/button.png",
+		Gap:     30,
+		Position: engo.Point{
+			X: 300,
+			Y: 240,
+		},
+		Entities: entities,
 	}
+	menu.Init()
 }
 
 type MainMenuSystem struct {
